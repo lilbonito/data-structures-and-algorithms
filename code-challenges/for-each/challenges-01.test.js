@@ -31,7 +31,7 @@ Return the modified array.
 ------------------------------------------------------------------------------------------------ */
 
 const addValues = (arr, value) => {
-  arr.push(value)
+  arr.push(value);
 };
 
 // Solution code here...
@@ -76,8 +76,8 @@ Write a function named removeWithForEach that produces the same output as challe
 ------------------------------------------------------------------------------------------------ */
 
 const removeWithForEach = (arr, callback) => {
-  arr.forEach((num, index, arr))
-
+  arr.forEach(item => callback(item, arr));
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -91,8 +91,13 @@ This anonymous function should accept up to three arguments: the element, the in
 ------------------------------------------------------------------------------------------------ */
 
 const removeWithAnon = (arr) => {
-  // Solution code here...
-};
+  arr.forEach((element, index, arr) => {
+    if(element % 3 === 2){
+      arr.pop();
+    }
+  });
+  return arr;
+}
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
