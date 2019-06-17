@@ -12,13 +12,16 @@ For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 ------------------------------------------------------------------------------------------------ */
 
 const count = (target, input) => {
-  let valueCount = arr.filternop(el => {
-    if(!valueCount.includes(el)){
-      return el;
-    }
-  })
+  return input.map(arr => {
+   return arr.reduce((a,b) => {
+    if(b === target){
+         a = a + 1;
+         return a;
+     }
+     return a;
+     }, 0);
+ }).reduce((a, b) => a+b, 0);
  };
-
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
