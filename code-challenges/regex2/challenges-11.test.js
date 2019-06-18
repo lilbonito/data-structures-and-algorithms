@@ -26,9 +26,9 @@ Return either true or false.
 Note: if you ever need to validate an email using a regex in practice, the Internet has the actual regex you should use. It's many many lines long.
 ------------------------------------------------------------------------------------------------ */
 
-const validateEmail = (email) => /^\w('' | ''.''/{
-  
-};
+const validateEmail = (email) => /^([a-z\d])+\.?([a-z\d])+?@([a-z]+.(net|org|com)$)/.test(email);
+
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -51,9 +51,8 @@ Your function should include a single regular expression pattern that matches an
 Return either true or false.
 ------------------------------------------------------------------------------------------------ */
 
-const validatePhoneNumber = (phoneNumber) => {
-  // Solution code here...
-};
+const validatePhoneNumber = (phoneNumber) => /(^(\d{3}|\(\d{3}\))\s?\-?\d{3}\-?\s?\d{4})$/.test(phoneNumber);
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4 - Stretch Goal
@@ -64,9 +63,7 @@ For example, findTagNames(['<h1>Hello, world!</h1>', '<p>Welcome to my site</p>'
 findTagNames(['<div><h1>Hello, world!</h1></div>', '<p>Welcome to my site</p>']) returns ['/h1', '/div', '/p'].
 ------------------------------------------------------------------------------------------------ */
 
-const findTagNames = elements => {
-  // Solution code here...
-};
+const findTagNames = elements => /^(<.+?>)/.exec(elements) 
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
