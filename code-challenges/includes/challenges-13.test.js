@@ -9,10 +9,10 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['t', 
 ------------------------------------------------------------------------------------------------ */
 
 const firstLetters = (arr) => {
-    return arr.map(item => {
-        return item.charAt(0);
-       });
-     };
+  return arr.map(item => {
+    return item.charAt(0);
+  });
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -23,15 +23,15 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['this
 ------------------------------------------------------------------------------------------------ */
 
 const findHappiness = (arr) => {
-    let smiley = ":)";
-    let results = [];
-    arr.map(item => {
-      if(item.includes(smiley)){
-        results.push(item);
-      }
-    })
-    return results;
-  };
+  let smiley = ':)';
+  let results = [];
+  arr.map(item => {
+    if(item.includes(smiley)){
+      results.push(item);
+    }
+  })
+  return results;
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -42,19 +42,19 @@ For example, (123) 456-7890 returns 1234567890
 ------------------------------------------------------------------------------------------------ */
 
 const standardizePhoneNumbers = (arr) => {
-    return arr.map(str => {
-        return str.split('').filter(item => {
-          if(
-            item === '(' ||
+  return arr.map(str => {
+    return str.split('').filter(item => {
+      if(
+        item === '(' ||
             item === ')' ||
             item === '-' ||
             item === ' ') {
-            return false;
-          }
-          return true;
-        }).join('');
-      });
-    }
+        return false;
+      }
+      return true;
+    }).join('');
+  });
+}
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
 
@@ -64,18 +64,27 @@ For example, 'abcdefg' returns 'bdf'
 ------------------------------------------------------------------------------------------------ */
 
 const onlyOddChars = (str) => {
-  // Solution code here...
+  return str.split('').filter((value, idx) => {
+    if(idx % 2) return true;
+    return false;
+  }).join('');
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
 
 Write a function named allHappy that takes in an array of strings and returns a Boolean indicating whether all those strings contain ":)".
 ------------------------------------------------------------------------------------------------ */
-
 const allHappy = (arr) => {
-  // Solution code here...
+  let result = arr.map(str => {
+    if(str.includes(":)")) return true;
+    return false;
+  });
+  if(result.includes(false)) return false;
+  return true;
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -84,7 +93,10 @@ Write a function named findAnything that takes in an array of strings, along wit
 ------------------------------------------------------------------------------------------------ */
 
 const findAnything = (arr, target) => {
-  // Solution code here...
+  return arr.filter(item => {
+    if(item.includes(target)) return true;
+    return false;
+  })
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -94,9 +106,13 @@ Write a function named findEvery that takes in an array of strings, along with a
 ------------------------------------------------------------------------------------------------ */
 
 const findEvery = (arr, target) => {
-  // Solution code here...
+  let result = arr.map(item => {
+    if(item.includes(target)) return true;
+    return false;
+  });
+  if(result.includes(false)) return false;
+  return true;
 };
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 8
 
@@ -110,8 +126,14 @@ For example, [['Brook Testing', 'Actual Person'], ['Human Person', 'Brook again'
 ------------------------------------------------------------------------------------------------ */
 
 const unenrollBrook = (arr) => {
-  // Solution code here...
+  return arr.map(arr2 => {
+    return arr2.filter(names => {
+      if(names.includes('Brook')) return false;
+      return true;
+    })
+  })
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 9 - Stretch Goal
